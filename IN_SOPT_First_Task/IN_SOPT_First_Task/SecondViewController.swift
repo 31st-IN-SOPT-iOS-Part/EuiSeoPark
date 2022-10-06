@@ -75,6 +75,7 @@ class SecondViewController: UIViewController {
             thirdVC.dataBind(userName: userName)
         }
         self.present(thirdVC, animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc private func touchupmakeAccountButton() {
