@@ -30,6 +30,7 @@ class SecondViewController: UIViewController {
     private let pwdTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 300, width: 350, height: 30))
         textField.placeholder = "비밀번호"
+        textField.isSecureTextEntry = true
         var bottomLine = CALayer()
         bottomLine.frame = CGRectMake(0.0, 45 - 1, 350, 1.0)
         bottomLine.backgroundColor = UIColor.gray.cgColor
@@ -41,6 +42,7 @@ class SecondViewController: UIViewController {
     private let checkPwdTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 375, width: 350, height: 30))
         textField.placeholder = "비밀번호 확인"
+        textField.isSecureTextEntry = true
         var bottomLine = CALayer()
         bottomLine.frame = CGRectMake(0.0, 45 - 1, 350, 1.0)
         bottomLine.backgroundColor = UIColor.gray.cgColor
