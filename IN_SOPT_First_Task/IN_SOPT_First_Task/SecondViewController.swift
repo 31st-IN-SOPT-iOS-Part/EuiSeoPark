@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+final class SecondViewController: UIViewController {
 
     private let firstTextLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 50))
@@ -63,10 +63,7 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let components: [Any] = [firstTextLabel,idTextField,pwdTextField,checkPwdTextField,makeAccountButton]
-        components.forEach {
-            view.addSubview($0 as! UIView)
-        }
+        view.addSubviews(firstTextLabel, idTextField, pwdTextField, checkPwdTextField, makeAccountButton)
     }
     
     private func presentToThirdVC() {

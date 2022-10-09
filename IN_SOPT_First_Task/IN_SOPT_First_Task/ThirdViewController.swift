@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+final class ThirdViewController: UIViewController {
     
     var userName: String?
     
@@ -32,10 +32,7 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let components: [Any] = [firstTextLabel,confirmButton]
-        components.forEach {
-            view.addSubview($0 as! UIView)
-        }
+        view.addSubviews(firstTextLabel,confirmButton)
     }
     
     @objc private func touchupConfirmButton() {
