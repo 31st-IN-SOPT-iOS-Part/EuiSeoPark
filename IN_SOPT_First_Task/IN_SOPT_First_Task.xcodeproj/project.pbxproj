@@ -15,6 +15,7 @@
 		B882735F28EB11E500B99A56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B882735D28EB11E500B99A56 /* LaunchScreen.storyboard */; };
 		B882736728EC0E7500B99A56 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882736628EC0E7500B99A56 /* SecondViewController.swift */; };
 		B882736928EC0FC900B99A56 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882736828EC0FC900B99A56 /* ThirdViewController.swift */; };
+		B8BA3E1228F2D123003B764C /* AddSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA3E1128F2D123003B764C /* AddSubViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B882736028EB11E500B99A56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B882736628EC0E7500B99A56 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B882736828EC0FC900B99A56 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		B8BA3E1128F2D123003B764C /* AddSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B882735228EB11E300B99A56 /* AppDelegate.swift */,
 				B882735428EB11E300B99A56 /* SceneDelegate.swift */,
 				B882735628EB11E300B99A56 /* FirstViewController.swift */,
+				B8BA3E1128F2D123003B764C /* AddSubViews.swift */,
 				B882736628EC0E7500B99A56 /* SecondViewController.swift */,
 				B882736828EC0FC900B99A56 /* ThirdViewController.swift */,
 				B882735828EB11E300B99A56 /* Main.storyboard */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B882736728EC0E7500B99A56 /* SecondViewController.swift in Sources */,
+				B8BA3E1228F2D123003B764C /* AddSubViews.swift in Sources */,
 				B882735728EB11E300B99A56 /* FirstViewController.swift in Sources */,
 				B882736928EC0FC900B99A56 /* ThirdViewController.swift in Sources */,
 				B882735328EB11E300B99A56 /* AppDelegate.swift in Sources */,
