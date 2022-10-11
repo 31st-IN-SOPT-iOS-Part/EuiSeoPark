@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ThirdViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
     
     var userName: String?
     

@@ -8,16 +8,16 @@
 import UIKit
 import SnapKit
 
-final class FirstViewController: UIViewController {
+final class KakaoLoginViewContoller: UIViewController {
 
-    private let firstTextLabel: UILabel = {
+    private let startKakaoTextLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .medium)
         label.text = "카카오톡을 시작합니다"
         return label
     }()
     
-    private let secondTextLabel: UILabel = {
+    private let loginGuideTextLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -89,20 +89,20 @@ final class FirstViewController: UIViewController {
     }
     
     private func layout() {
-        view.addSubviews(firstTextLabel, secondTextLabel, idTextField, passwdTextField, loginButton, newAccountButton, findAccountButton)
+        view.addSubviews(startKakaoTextLabel, loginGuideTextLabel, idTextField, passwdTextField, loginButton, newAccountButton, findAccountButton)
         
-        firstTextLabel.snp.makeConstraints { make in
+        startKakaoTextLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
             make.leading.trailing.equalToSuperview().inset(89)
         }
         
-        secondTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(firstTextLabel.snp.bottom).offset(20)
+        loginGuideTextLabel.snp.makeConstraints { make in
+            make.top.equalTo(startKakaoTextLabel.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview().inset(67)
         }
         
         idTextField.snp.makeConstraints { make in
-            make.top.equalTo(secondTextLabel.snp.bottom).offset(60)
+            make.top.equalTo(loginGuideTextLabel.snp.bottom).offset(60)
             make.leading.trailing.equalToSuperview().inset(21)
             make.height.equalTo(49)
         }
@@ -132,7 +132,7 @@ final class FirstViewController: UIViewController {
     }
     
     private func presentToThirdVC() {
-        let thirdVC = ThirdViewController()
+        let thirdVC = WelcomeViewController()
         thirdVC.modalPresentationStyle = .formSheet
         
         if let userName = idTextField.text {
@@ -143,7 +143,7 @@ final class FirstViewController: UIViewController {
     }
 
     private func pushToSecondVC() {
-        let secondVC = SecondViewController()
+        let secondVC = NewAccountViewContoller()
         self.navigationController?.pushViewController(secondVC, animated: true)
         clearTextField()
     }

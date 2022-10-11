@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-final class SecondViewController: UIViewController {
+final class NewAccountViewContoller: UIViewController {
 
-    private let firstTextLabel: UILabel = {
+    private let startKakaoTextLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .medium)
         label.text = "카카오톡을 시작합니다"
@@ -29,7 +29,7 @@ final class SecondViewController: UIViewController {
         return textField
     }()
     
-    private let pwdTextField: UITextField = {
+    private let passwdTextField: UITextField = {
         let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: attribute)
@@ -42,7 +42,7 @@ final class SecondViewController: UIViewController {
         return textField
     }()
     
-    private let checkPwdTextField: UITextField = {
+    private let checkPasswdTextField: UITextField = {
         let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(string: "비밀번호 확인", attributes: attribute)
@@ -72,40 +72,40 @@ final class SecondViewController: UIViewController {
     }
     
     private func layout() {
-        view.addSubviews(firstTextLabel, idTextField, pwdTextField, checkPwdTextField, makeAccountButton)
+        view.addSubviews(startKakaoTextLabel, idTextField, passwdTextField, checkPasswdTextField, makeAccountButton)
         
-        firstTextLabel.snp.makeConstraints { make in
+        startKakaoTextLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
             make.leading.trailing.equalToSuperview().inset(89)
         }
         
         idTextField.snp.makeConstraints { make in
-            make.top.equalTo(firstTextLabel.snp.bottom).offset(116)
+            make.top.equalTo(startKakaoTextLabel.snp.bottom).offset(116)
             make.leading.trailing.equalToSuperview().inset(21)
             make.height.equalTo(49)
         }
         
-        pwdTextField.snp.makeConstraints { make in
+        passwdTextField.snp.makeConstraints { make in
             make.top.equalTo(idTextField.snp.bottom).offset(10)
             make.leading.trailing.equalTo(idTextField)
             make.height.equalTo(idTextField)
         }
         
-        checkPwdTextField.snp.makeConstraints { make in
-            make.top.equalTo(pwdTextField.snp.bottom).offset(10)
+        checkPasswdTextField.snp.makeConstraints { make in
+            make.top.equalTo(passwdTextField.snp.bottom).offset(10)
             make.leading.trailing.equalTo(idTextField)
             make.height.equalTo(idTextField)
         }
         
         makeAccountButton.snp.makeConstraints { make in
-            make.top.equalTo(checkPwdTextField.snp.bottom).offset(26)
+            make.top.equalTo(checkPasswdTextField.snp.bottom).offset(26)
             make.leading.trailing.equalToSuperview().inset(26)
             make.height.equalTo(44)
         }
     }
     
     private func presentToThirdVC() {
-        let thirdVC = ThirdViewController()
+        let thirdVC = WelcomeViewController()
         thirdVC.modalPresentationStyle = .formSheet
         
         if let userName = idTextField.text {
