@@ -65,12 +65,6 @@ final class NewAccountViewContoller: UIViewController {
         return button
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        layout()
-    }
-    
     private func layout() {
         view.addSubviews(startKakaoTextLabel, idTextField, passwdTextField, checkPasswdTextField, makeAccountButton)
         
@@ -119,5 +113,11 @@ final class NewAccountViewContoller: UIViewController {
     
     @objc private func touchupmakeAccountButton() {
         presentToThirdVC()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        layout()
     }
 }

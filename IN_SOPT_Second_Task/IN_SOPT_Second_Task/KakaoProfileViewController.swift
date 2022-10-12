@@ -222,6 +222,4 @@ class KakaoProfileViewController: UIViewController {
         view.backgroundColor = .systemGray2
         layout()
     }
-    
-    
 }

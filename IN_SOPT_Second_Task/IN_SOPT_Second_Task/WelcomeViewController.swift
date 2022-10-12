@@ -30,12 +30,6 @@ final class WelcomeViewController: UIViewController {
         button.addTarget(self, action: #selector(touchupConfirmButton), for: .touchUpInside)
         return button
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        layout()
-    }
     
     private func layout() {
         view.addSubviews(firstTextLabel,confirmButton)
@@ -64,5 +58,10 @@ final class WelcomeViewController: UIViewController {
     func dataBind(userName: String) {
         firstTextLabel.text = "\(userName)님 \n환영합니다"
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        layout()
+    }
 }

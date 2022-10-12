@@ -80,13 +80,6 @@ final class KakaoLoginViewContoller: UIViewController {
         button.titleLabel?.font =  .systemFont(ofSize: 13)
         return button
     }()
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        layout()
-    }
     
     private func layout() {
         view.addSubviews(startKakaoTextLabel, loginGuideTextLabel, idTextField, passwdTextField, loginButton, newAccountButton, findAccountButton)
@@ -164,6 +157,10 @@ final class KakaoLoginViewContoller: UIViewController {
         passwdTextField.text = ""
     }
 
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        layout()
+    }
 }
 
