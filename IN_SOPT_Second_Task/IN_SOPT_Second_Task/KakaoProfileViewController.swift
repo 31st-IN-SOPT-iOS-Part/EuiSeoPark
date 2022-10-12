@@ -213,6 +213,10 @@ class KakaoProfileViewController: UIViewController {
         print("You touched kakao-story view")
     }
     
+    func dataBind(userName: String) {
+        userNameTextLabel.text = "\(userName)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray2
