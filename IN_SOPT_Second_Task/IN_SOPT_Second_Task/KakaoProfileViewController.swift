@@ -104,7 +104,7 @@ class KakaoProfileViewController: UIViewController {
     // MARK: - line
     private let seperateLine: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray5
         return view
     }()
     
