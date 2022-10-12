@@ -28,6 +28,15 @@ class KakaoProfileViewController: UIViewController {
         return button
     }()
     
+    private let userNameTextLabel: UILabel = {
+        let label = UILabel()
+        label.text = "김솝트"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 15)
+        return label
+    }()
+    
     // MARK: - Bottom Button StackView
     private let chatIconImage: UIImageView = {
        let image = UIImageView()
@@ -92,6 +101,13 @@ class KakaoProfileViewController: UIViewController {
         return view
     }()
     
+    // MARK: - line
+    private let seperateLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     // MARK: - layout
     private func layout() {
         
@@ -106,7 +122,7 @@ class KakaoProfileViewController: UIViewController {
             return stackView
         }()
         
-        view.addSubviews(closeButton, profileIconButton, stackView)
+        view.addSubviews(closeButton, profileIconButton, userNameTextLabel, seperateLine, stackView)
         closeButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(14)
             make.leading.equalTo(view.safeAreaLayoutGuide).inset(18)
@@ -157,6 +173,22 @@ class KakaoProfileViewController: UIViewController {
         kakaoStoryTextLabel.snp.makeConstraints { make in
             make.top.equalTo(kakaoStoryImage.snp.bottom).offset(9.71)
             make.centerX.equalTo(kakaoStoryImage)
+        }
+        
+        seperateLine.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(stackView.snp.top).inset(-12)
+            make.height.equalTo(1)
+        }
+        
+        userNameTextLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(164)
+            make.bottom.equalTo(seperateLine.snp.top).inset(-42)
+        }
+        
+        profileIconButton.snp.makeConstraints { make in
+            make.centerX.equalTo(userNameTextLabel)
+            make.bottom.equalTo(userNameTextLabel.snp.top).inset(-8)
         }
     }
     
