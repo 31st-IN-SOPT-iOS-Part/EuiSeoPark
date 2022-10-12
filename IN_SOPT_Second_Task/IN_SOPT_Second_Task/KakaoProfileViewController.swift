@@ -8,21 +8,35 @@
 import UIKit
 
 class KakaoProfileViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    private lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "profile_closeBtn"), for: .normal)
+        button.addTarget(self, action: #selector(touchUpCloseButton), for: .touchUpInside)
+        return button
+    }()
+    
+    private func layout() {
+        view.addSubviews(closeButton)
+        
+        closeButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(14)
+            make.leading.equalTo(view.safeAreaLayoutGuide).inset(18)
+            make.width.equalTo(13)
+            make.height.equalTo(14)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc
+    private func touchUpCloseButton() {
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemGray2
+        layout()
+    }
+    
+    
 }

@@ -30,9 +30,10 @@ class FriendListViewController: UIViewController {
         return button
     }()
     
-    private let profileIconButton: UIButton = {
+    private lazy var profileIconButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "profile_userImg"), for: .normal)
+        button.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
         return button
     }()
     
@@ -72,6 +73,14 @@ class FriendListViewController: UIViewController {
             make.height.equalTo(58)
             make.bottom.equalToSuperview().inset(10)
         }
+    }
+    
+    @objc
+    private func presentToProfileVC() {
+        let profileVC = KakaoProfileViewController()
+        profileVC.modalPresentationStyle = .fullScreen
+
+        self.present(profileVC, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
