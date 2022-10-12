@@ -53,10 +53,16 @@ final class WelcomeViewController: UIViewController {
         else {
             self.navigationController?.popViewController(animated: true)
         }
+        changeRootVC()
     }
     
     func dataBind(userName: String) {
         firstTextLabel.text = "\(userName)님 \n환영합니다"
+    }
+    
+    private func changeRootVC() {
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = FriendListViewController()
     }
     
     override func viewDidLoad() {
