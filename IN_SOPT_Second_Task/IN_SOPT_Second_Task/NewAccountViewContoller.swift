@@ -98,7 +98,7 @@ final class NewAccountViewContoller: UIViewController {
         }
     }
     
-    private func presentToThirdVC() {
+    private func presentToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
         let kakaoProfileVC = KakaoProfileViewController()
         welcomeVC.modalPresentationStyle = .formSheet
@@ -112,7 +112,7 @@ final class NewAccountViewContoller: UIViewController {
     }
     
     @objc private func touchupmakeAccountButton() {
-        presentToThirdVC()
+        presentToWelcomeVC()
     }
     
     override func viewDidLoad() {

@@ -124,7 +124,7 @@ final class KakaoLoginViewContoller: UIViewController {
         }
     }
     
-    private func presentToThirdVC() {
+    private func presentToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
         let kakaoProfileVC = KakaoProfileViewController()
         
@@ -145,7 +145,7 @@ final class KakaoLoginViewContoller: UIViewController {
     }
     
     @objc private func touchupLoginButton() {
-        presentToThirdVC()
+        presentToWelcomeVC()
     }
     
     @objc private func touchupNewAccountButton() {
