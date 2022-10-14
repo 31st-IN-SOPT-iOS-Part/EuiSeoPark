@@ -137,8 +137,8 @@ final class KakaoLoginViewContoller: UIViewController {
     }
 
     private func pushToSecondVC() {
-        let secondVC = NewAccountViewContoller()
-        self.navigationController?.pushViewController(secondVC, animated: true)
+        let newAccountVC = NewAccountViewContoller()
+        self.navigationController?.pushViewController(newAccountVC, animated: true)
         clearTextField()
     }
     
