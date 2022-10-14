@@ -10,6 +10,8 @@ import SnapKit
 
 class FriendListViewController: UIViewController {
     
+    var name: String?
+
     private let friendsScrollView = UIScrollView()
     
     private let topBarView: UIView = {
@@ -79,8 +81,15 @@ class FriendListViewController: UIViewController {
     private func presentToProfileVC() {
         let profileVC = KakaoProfileViewController()
         profileVC.modalPresentationStyle = .fullScreen
-
+        
+        if let userName = name {
+            profileVC.dataBind(userName: userName)
+        }
         self.present(profileVC, animated: true, completion: nil)
+    }
+    
+    func dataBind(userName: String) {
+            name = userName
     }
     
     override func viewDidLoad() {

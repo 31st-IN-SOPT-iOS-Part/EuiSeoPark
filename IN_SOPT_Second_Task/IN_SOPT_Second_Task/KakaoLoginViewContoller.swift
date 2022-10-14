@@ -126,13 +126,11 @@ final class KakaoLoginViewContoller: UIViewController {
     
     private func presentToWelcomeVC() {
         let welcomeVC = WelcomeViewController()
-        let kakaoProfileVC = KakaoProfileViewController()
         
         welcomeVC.modalPresentationStyle = .formSheet
         
         if let userName = idTextField.text {
             welcomeVC.dataBind(userName: userName)
-            kakaoProfileVC.dataBind(userName: userName)
         }
         self.present(welcomeVC, animated: true, completion: nil)
         clearTextField()

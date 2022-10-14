@@ -10,7 +10,7 @@ import SnapKit
 
 final class WelcomeViewController: UIViewController {
     
-    var userName: String?
+    var name: String?
     
     private let firstTextLabel: UILabel = {
         let label = UILabel()
@@ -47,6 +47,12 @@ final class WelcomeViewController: UIViewController {
     }
     
     @objc private func touchupConfirmButton() {
+        let friendListVC = FriendListViewController()
+        
+        if let userName  = name {
+            friendListVC.dataBind(userName: userName)
+        }
+        
         if self.navigationController == nil {
             self.dismiss(animated: true, completion: nil)
         }
@@ -57,6 +63,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     func dataBind(userName: String) {
+        name = userName
         firstTextLabel.text = "\(userName)님 \n환영합니다"
     }
     
