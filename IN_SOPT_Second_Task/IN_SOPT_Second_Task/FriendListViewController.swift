@@ -27,13 +27,13 @@ class FriendListViewController: UIViewController {
     }()
     
     private let settingIconButton: UIButton = {
-        let button = UIButton(type: .custom)
+        let button = UIButton()
         button.setImage(UIImage(named: "settings 1"), for: .normal)
         return button
     }()
     
     private lazy var profileIconButton: UIButton = {
-        let button = UIButton(type: .custom)
+        let button = UIButton()
         button.setImage(UIImage(named: "profile_userImg"), for: .normal)
         button.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
         return button

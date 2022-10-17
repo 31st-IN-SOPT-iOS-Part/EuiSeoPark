@@ -140,12 +140,12 @@ class KakaoProfileViewController: UIViewController {
         chatIconImage.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(22)
             make.leading.equalToSuperview().inset(39)
-            make.trailing.equalToSuperview().inset(32.41)
-            make.width.equalTo(18.86)
-            make.height.equalTo(17.59)
+            make.trailing.equalToSuperview().inset(32)
+            make.width.equalTo(19)
+            make.height.equalTo(18)
         }
         chatTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(chatIconImage.snp.bottom).offset(8.41)
+            make.top.equalTo(chatIconImage.snp.bottom).offset(8)
             make.centerX.equalTo(chatIconImage)
         }
         
@@ -153,12 +153,12 @@ class KakaoProfileViewController: UIViewController {
         editProfileImage.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(19)
             make.leading.equalToSuperview().inset(39)
-            make.trailing.equalToSuperview().inset(39.28)
-            make.width.equalTo(17.72)
-            make.height.equalTo(19.29)
+            make.trailing.equalToSuperview().inset(39)
+            make.width.equalTo(18)
+            make.height.equalTo(19)
         }
         editProfileTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(editProfileImage.snp.bottom).offset(9.71)
+            make.top.equalTo(editProfileImage.snp.bottom).offset(10)
             make.centerX.equalTo(editProfileImage)
         }
         
@@ -166,12 +166,12 @@ class KakaoProfileViewController: UIViewController {
         kakaoStoryImage.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(19)
             make.leading.equalToSuperview().inset(39)
-            make.trailing.equalToSuperview().inset(30.42)
-            make.width.equalTo(17.72)
-            make.height.equalTo(19.29)
+            make.trailing.equalToSuperview().inset(30)
+            make.width.equalTo(18)
+            make.height.equalTo(19)
         }
         kakaoStoryTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(kakaoStoryImage.snp.bottom).offset(9.71)
+            make.top.equalTo(kakaoStoryImage.snp.bottom).offset(10)
             make.centerX.equalTo(kakaoStoryImage)
         }
         
