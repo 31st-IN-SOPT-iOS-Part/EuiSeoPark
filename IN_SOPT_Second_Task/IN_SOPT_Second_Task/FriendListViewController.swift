@@ -14,10 +14,7 @@ class FriendListViewController: UIViewController {
 
     private let friendsScrollView = UIScrollView()
     
-    private let topBarView: UIView = {
-        let view = UIView()
-        return view
-    }()
+    private let topBarView = UIView()
 
     private let friendTextLabel: UILabel = {
        let label = UILabel()

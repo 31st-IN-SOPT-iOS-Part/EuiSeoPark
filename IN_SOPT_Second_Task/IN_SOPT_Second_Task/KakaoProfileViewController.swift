@@ -10,10 +10,6 @@ import UIKit
 class KakaoProfileViewController: UIViewController {
     
     // MARK: - Profile
-    private let profileView: UIView = {
-       let view = UIView()
-        return view
-    }()
     
     private lazy var closeButton: UIButton = {
         let button = UIButton()
