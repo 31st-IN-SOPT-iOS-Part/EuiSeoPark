@@ -81,7 +81,7 @@ final class KakaoLoginViewContoller: UIViewController {
         return button
     }()
     
-    private func layout() {
+    private func setLayout() {
         view.addSubviews(startKakaoTextLabel, loginGuideTextLabel, idTextField, passwdTextField, loginButton, newAccountButton, findAccountButton)
         
         startKakaoTextLabel.snp.makeConstraints { make in
@@ -158,7 +158,7 @@ final class KakaoLoginViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        layout()
+        setLayout()
     }
 }
 

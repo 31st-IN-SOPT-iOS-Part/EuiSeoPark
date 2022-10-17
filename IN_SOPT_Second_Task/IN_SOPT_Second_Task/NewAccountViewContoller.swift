@@ -65,7 +65,7 @@ final class NewAccountViewContoller: UIViewController {
         return button
     }()
     
-    private func layout() {
+    private func setLayout() {
         view.addSubviews(startKakaoTextLabel, idTextField, passwdTextField, checkPasswdTextField, makeAccountButton)
         
         startKakaoTextLabel.snp.makeConstraints { make in
@@ -116,6 +116,6 @@ final class NewAccountViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        layout()
+        setLayout()
     }
 }

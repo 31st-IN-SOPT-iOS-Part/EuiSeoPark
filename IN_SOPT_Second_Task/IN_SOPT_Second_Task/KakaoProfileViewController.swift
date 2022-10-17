@@ -105,7 +105,7 @@ class KakaoProfileViewController: UIViewController {
     }()
     
     // MARK: - layout
-    private func layout() {
+    private func setLayout() {
         
         let stackView: UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [chatView, editProfileView, kakaoStoryView])
@@ -216,6 +216,6 @@ class KakaoProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray2
-        layout()
+        setLayout()
     }
 }

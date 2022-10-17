@@ -31,7 +31,7 @@ final class WelcomeViewController: UIViewController {
         return button
     }()
     
-    private func layout() {
+    private func setLayout() {
         view.addSubviews(firstTextLabel,confirmButton)
         
         firstTextLabel.snp.makeConstraints { make in
@@ -71,6 +71,6 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        layout()
+        setLayout()
     }
 }

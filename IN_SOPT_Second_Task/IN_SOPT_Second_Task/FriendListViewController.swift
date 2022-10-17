@@ -36,7 +36,7 @@ class FriendListViewController: UIViewController {
         return button
     }()
     
-    private func layout() {
+    private func setLayout() {
         view.addSubviews(topBarView,friendsScrollView)
         
         topBarView.snp.makeConstraints { make in
@@ -92,6 +92,6 @@ class FriendListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        layout()
+        setLayout()
     }
 }
