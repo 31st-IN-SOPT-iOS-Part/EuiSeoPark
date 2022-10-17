@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B84EF07A28FD73A3006D2101 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B84EF07928FD73A3006D2101 /* Then */; };
 		B87A460828F5585900A305A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B87A460728F5585800A305A6 /* SnapKit */; };
 		B87A460C28F5BF4D00A305A6 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */; };
 		B87A460E28F5D90B00A305A6 /* KakaoProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */; };
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B87A460828F5585900A305A6 /* SnapKit in Frameworks */,
+				B84EF07A28FD73A3006D2101 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +104,7 @@
 			name = IN_SOPT_Second_Task;
 			packageProductDependencies = (
 				B87A460728F5585800A305A6 /* SnapKit */,
+				B84EF07928FD73A3006D2101 /* Then */,
 			);
 			productName = IN_SOPT_First_Task_;
 			productReference = B882734F28EB11E300B99A56 /* IN_SOPT_Second_Task.app */;
@@ -133,6 +136,7 @@
 			mainGroup = B882734628EB11E300B99A56;
 			packageReferences = (
 				B87A460628F5585800A305A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B84EF07828FD73A3006D2101 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = B882735028EB11E300B99A56 /* Products */;
 			projectDirPath = "";
@@ -388,6 +392,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B84EF07828FD73A3006D2101 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B87A460628F5585800A305A6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -399,6 +411,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B84EF07928FD73A3006D2101 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B84EF07828FD73A3006D2101 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		B87A460728F5585800A305A6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B87A460628F5585800A305A6 /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class WelcomeViewController: UIViewController {
     
@@ -34,15 +35,15 @@ final class WelcomeViewController: UIViewController {
     private func setLayout() {
         view.addSubviews(firstTextLabel,confirmButton)
         
-        firstTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(197)
-            make.leading.trailing.equalToSuperview().inset(144)
+        firstTextLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(197)
+            $0.leading.trailing.equalToSuperview().inset(144)
         }
         
-        confirmButton.snp.makeConstraints { make in
-            make.top.equalTo(firstTextLabel.snp.bottom).offset(117)
-            make.leading.trailing.equalToSuperview().inset(21)
-            make.height.equalTo(44)
+        confirmButton.snp.makeConstraints {
+            $0.top.equalTo(firstTextLabel.snp.bottom).offset(117)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(44)
         }
     }
     

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class KakaoProfileViewController: UIViewController {
     
@@ -119,72 +121,72 @@ class KakaoProfileViewController: UIViewController {
         }()
         
         view.addSubviews(closeButton, profileIconButton, userNameTextLabel, seperateLine, stackView)
-        closeButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(14)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(18)
-            make.width.equalTo(13)
-            make.height.equalTo(14)
+        closeButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(18)
+            $0.width.equalTo(13)
+            $0.height.equalTo(14)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(44)
-            make.bottom.equalToSuperview().inset(47)
-            make.height.equalTo(72)
+        stackView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(44)
+            $0.bottom.equalToSuperview().inset(47)
+            $0.height.equalTo(72)
         }
         
         chatView.addSubviews(chatIconImage, chatTextLabel)
-        chatIconImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(22)
-            make.leading.equalToSuperview().inset(39)
-            make.trailing.equalToSuperview().inset(32)
-            make.width.equalTo(19)
-            make.height.equalTo(18)
+        chatIconImage.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(22)
+            $0.leading.equalToSuperview().inset(39)
+            $0.trailing.equalToSuperview().inset(32)
+            $0.width.equalTo(19)
+            $0.height.equalTo(18)
         }
-        chatTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(chatIconImage.snp.bottom).offset(8)
-            make.centerX.equalTo(chatIconImage)
+        chatTextLabel.snp.makeConstraints {
+            $0.top.equalTo(chatIconImage.snp.bottom).offset(8)
+            $0.centerX.equalTo(chatIconImage)
         }
         
         editProfileView.addSubviews(editProfileImage, editProfileTextLabel)
-        editProfileImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(19)
-            make.leading.equalToSuperview().inset(39)
-            make.trailing.equalToSuperview().inset(39)
-            make.width.equalTo(18)
-            make.height.equalTo(19)
+        editProfileImage.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(19)
+            $0.leading.equalToSuperview().inset(39)
+            $0.trailing.equalToSuperview().inset(39)
+            $0.width.equalTo(18)
+            $0.height.equalTo(19)
         }
-        editProfileTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(editProfileImage.snp.bottom).offset(10)
-            make.centerX.equalTo(editProfileImage)
+        editProfileTextLabel.snp.makeConstraints {
+            $0.top.equalTo(editProfileImage.snp.bottom).offset(10)
+            $0.centerX.equalTo(editProfileImage)
         }
         
         kakaoStoryView.addSubviews(kakaoStoryImage, kakaoStoryTextLabel)
-        kakaoStoryImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(19)
-            make.leading.equalToSuperview().inset(39)
-            make.trailing.equalToSuperview().inset(30)
-            make.width.equalTo(18)
-            make.height.equalTo(19)
+        kakaoStoryImage.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(19)
+            $0.leading.equalToSuperview().inset(39)
+            $0.trailing.equalToSuperview().inset(30)
+            $0.width.equalTo(18)
+            $0.height.equalTo(19)
         }
-        kakaoStoryTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(kakaoStoryImage.snp.bottom).offset(10)
-            make.centerX.equalTo(kakaoStoryImage)
-        }
-        
-        seperateLine.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(stackView.snp.top).inset(-12)
-            make.height.equalTo(1)
+        kakaoStoryTextLabel.snp.makeConstraints {
+            $0.top.equalTo(kakaoStoryImage.snp.bottom).offset(10)
+            $0.centerX.equalTo(kakaoStoryImage)
         }
         
-        userNameTextLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(164)
-            make.bottom.equalTo(seperateLine.snp.top).inset(-42)
+        seperateLine.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(stackView.snp.top).inset(-12)
+            $0.height.equalTo(1)
         }
         
-        profileIconButton.snp.makeConstraints { make in
-            make.centerX.equalTo(userNameTextLabel)
-            make.bottom.equalTo(userNameTextLabel.snp.top).inset(-8)
+        userNameTextLabel.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(164)
+            $0.bottom.equalTo(seperateLine.snp.top).inset(-42)
+        }
+        
+        profileIconButton.snp.makeConstraints {
+            $0.centerX.equalTo(userNameTextLabel)
+            $0.bottom.equalTo(userNameTextLabel.snp.top).inset(-8)
         }
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class KakaoLoginViewContoller: UIViewController {
 
@@ -84,43 +85,43 @@ final class KakaoLoginViewContoller: UIViewController {
     private func setLayout() {
         view.addSubviews(startKakaoTextLabel, loginGuideTextLabel, idTextField, passwdTextField, loginButton, newAccountButton, findAccountButton)
         
-        startKakaoTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
-            make.leading.trailing.equalToSuperview().inset(89)
+        startKakaoTextLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(40)
+            $0.leading.trailing.equalToSuperview().inset(89)
         }
         
-        loginGuideTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(startKakaoTextLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(67)
+        loginGuideTextLabel.snp.makeConstraints {
+            $0.top.equalTo(startKakaoTextLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(67)
         }
         
-        idTextField.snp.makeConstraints { make in
-            make.top.equalTo(loginGuideTextLabel.snp.bottom).offset(60)
-            make.leading.trailing.equalToSuperview().inset(21)
-            make.height.equalTo(49)
+        idTextField.snp.makeConstraints {
+            $0.top.equalTo(loginGuideTextLabel.snp.bottom).offset(60)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(49)
         }
         
-        passwdTextField.snp.makeConstraints { make in
-            make.top.equalTo(idTextField.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(idTextField)
-            make.height.equalTo(idTextField)
+        passwdTextField.snp.makeConstraints {
+            $0.top.equalTo(idTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(idTextField)
+            $0.height.equalTo(idTextField)
         }
         
-        loginButton.snp.makeConstraints { make in
-            make.top.equalTo(passwdTextField.snp.bottom).offset(35)
-            make.leading.trailing.equalToSuperview().inset(21)
-            make.height.equalTo(44)
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(passwdTextField.snp.bottom).offset(35)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(44)
         }
         
-        newAccountButton.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(loginButton)
-            make.height.equalTo(loginButton)
+        newAccountButton.snp.makeConstraints {
+            $0.top.equalTo(loginButton.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(loginButton)
+            $0.height.equalTo(loginButton)
         }
         
-        findAccountButton.snp.makeConstraints { make in
-            make.top.equalTo(newAccountButton.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview().inset(99)
+        findAccountButton.snp.makeConstraints {
+            $0.top.equalTo(newAccountButton.snp.bottom).offset(15)
+            $0.leading.trailing.equalToSuperview().inset(99)
         }
     }
     

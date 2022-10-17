@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class NewAccountViewContoller: UIViewController {
 
@@ -68,33 +69,33 @@ final class NewAccountViewContoller: UIViewController {
     private func setLayout() {
         view.addSubviews(startKakaoTextLabel, idTextField, passwdTextField, checkPasswdTextField, makeAccountButton)
         
-        startKakaoTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
-            make.leading.trailing.equalToSuperview().inset(89)
+        startKakaoTextLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(40)
+            $0.leading.trailing.equalToSuperview().inset(89)
         }
         
-        idTextField.snp.makeConstraints { make in
-            make.top.equalTo(startKakaoTextLabel.snp.bottom).offset(116)
-            make.leading.trailing.equalToSuperview().inset(21)
-            make.height.equalTo(49)
+        idTextField.snp.makeConstraints {
+            $0.top.equalTo(startKakaoTextLabel.snp.bottom).offset(116)
+            $0.leading.trailing.equalToSuperview().inset(21)
+            $0.height.equalTo(49)
         }
         
-        passwdTextField.snp.makeConstraints { make in
-            make.top.equalTo(idTextField.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(idTextField)
-            make.height.equalTo(idTextField)
+        passwdTextField.snp.makeConstraints {
+            $0.top.equalTo(idTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(idTextField)
+            $0.height.equalTo(idTextField)
         }
         
-        checkPasswdTextField.snp.makeConstraints { make in
-            make.top.equalTo(passwdTextField.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(idTextField)
-            make.height.equalTo(idTextField)
+        checkPasswdTextField.snp.makeConstraints {
+            $0.top.equalTo(passwdTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(idTextField)
+            $0.height.equalTo(idTextField)
         }
         
-        makeAccountButton.snp.makeConstraints { make in
-            make.top.equalTo(checkPasswdTextField.snp.bottom).offset(26)
-            make.leading.trailing.equalToSuperview().inset(26)
-            make.height.equalTo(44)
+        makeAccountButton.snp.makeConstraints {
+            $0.top.equalTo(checkPasswdTextField.snp.bottom).offset(26)
+            $0.leading.trailing.equalToSuperview().inset(26)
+            $0.height.equalTo(44)
         }
     }
     

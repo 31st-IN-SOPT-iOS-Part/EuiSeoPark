@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Then
 
 class FriendListViewController: UIViewController {
     
@@ -39,38 +40,38 @@ class FriendListViewController: UIViewController {
     private func setLayout() {
         view.addSubviews(topBarView,friendsScrollView)
         
-        topBarView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(52)
+        topBarView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(52)
         }
         
-        friendsScrollView.snp.makeConstraints { make in
-            make.top.equalTo(topBarView.snp.bottom)
-            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        friendsScrollView.snp.makeConstraints {
+            $0.top.equalTo(topBarView.snp.bottom)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
         topBarView.addSubviews(friendTextLabel, settingIconButton)
         
-        friendTextLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(12)
-            make.leading.equalToSuperview().inset(14)
+        friendTextLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(12)
+            $0.leading.equalToSuperview().inset(14)
         }
         
-        settingIconButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.leading.equalTo(friendTextLabel.snp.trailing).offset(4)
-            make.width.height.equalTo(21)
+        settingIconButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(16)
+            $0.leading.equalTo(friendTextLabel.snp.trailing).offset(4)
+            $0.width.height.equalTo(21)
         }
         
         friendsScrollView.addSubviews(profileIconButton)
         
-        profileIconButton.snp.makeConstraints { make in
-            make.top.equalTo(topBarView.snp.bottom).offset(15)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(14)
-            make.width.equalTo(59)
-            make.height.equalTo(58)
-            make.bottom.equalToSuperview().inset(10)
+        profileIconButton.snp.makeConstraints {
+            $0.top.equalTo(topBarView.snp.bottom).offset(15)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(14)
+            $0.width.equalTo(59)
+            $0.height.equalTo(58)
+            $0.bottom.equalToSuperview().inset(10)
         }
     }
     
