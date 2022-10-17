@@ -13,24 +13,20 @@ final class WelcomeViewController: UIViewController {
     
     var name: String?
     
-    private let firstTextLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
-        label.text = "000님 \n환영합니다"
-        return label
-    }()
+    private let firstTextLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.text = "000님 \n환영합니다"
+    }
     
-    private lazy var confirmButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemYellow
-        button.setTitle("확인", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(touchupConfirmButton), for: .touchUpInside)
-        return button
-    }()
+    private lazy var confirmButton = UIButton().then {
+        $0.backgroundColor = .systemYellow
+        $0.setTitle("확인", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        $0.setTitleColor(.black, for: .normal)
+        $0.addTarget(self, action: #selector(touchupConfirmButton), for: .touchUpInside)
+    }
     
     private func setLayout() {
         view.addSubviews(firstTextLabel,confirmButton)

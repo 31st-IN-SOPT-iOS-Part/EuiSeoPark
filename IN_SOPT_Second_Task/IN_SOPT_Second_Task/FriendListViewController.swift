@@ -17,25 +17,19 @@ class FriendListViewController: UIViewController {
     
     private let topBarView = UIView()
 
-    private let friendTextLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
-        label.text = "친구"
-        return label
-    }()
+    private let friendTextLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 22, weight: .semibold)
+        $0.text = "친구"
+    }
     
-    private let settingIconButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "settings 1"), for: .normal)
-        return button
-    }()
+    private let settingIconButton = UIButton().then {
+        $0.setImage(UIImage(named: "settings 1"), for: .normal)
+    }
     
-    private lazy var profileIconButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "profile_userImg"), for: .normal)
-        button.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
-        return button
-    }()
+    private lazy var profileIconButton = UIButton().then {
+        $0.setImage(UIImage(named: "profile_userImg"), for: .normal)
+        $0.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
+    }
     
     private func setLayout() {
         view.addSubviews(topBarView,friendsScrollView)

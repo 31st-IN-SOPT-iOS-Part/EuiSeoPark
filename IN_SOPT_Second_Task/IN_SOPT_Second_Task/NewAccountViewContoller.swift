@@ -11,60 +11,51 @@ import Then
 
 final class NewAccountViewContoller: UIViewController {
 
-    private let startKakaoTextLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .medium)
-        label.text = "카카오톡을 시작합니다"
-        return label
-    }()
+    private let startKakaoTextLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 22, weight: .medium)
+        $0.text = "카카오톡을 시작합니다"
+    }
     
-    private let idTextField: UITextField = {
+    private let idTextField = UITextField().then {
         let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
         let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "이메일 또는 전화번호", attributes: attribute)
         var bottomLine = CALayer()
         bottomLine.frame = CGRectMake(0.0, 45 - 1, 333, 1.0)
         bottomLine.backgroundColor = UIColor.gray.cgColor
-        textField.borderStyle = .none
-        textField.layer.addSublayer(bottomLine)
-        return textField
-    }()
+        $0.attributedPlaceholder = NSAttributedString(string: "이메일 또는 전화번호", attributes: attribute)
+        $0.borderStyle = .none
+        $0.layer.addSublayer(bottomLine)
+    }
     
-    private let passwdTextField: UITextField = {
+    private let passwdTextField = UITextField().then {
         let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: attribute)
-        textField.isSecureTextEntry = true
         var bottomLine = CALayer()
         bottomLine.frame = CGRectMake(0.0, 45 - 1, 333, 1.0)
         bottomLine.backgroundColor = UIColor.gray.cgColor
-        textField.borderStyle = .none
-        textField.layer.addSublayer(bottomLine)
-        return textField
-    }()
+        $0.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: attribute)
+        $0.isSecureTextEntry = true
+        $0.borderStyle = .none
+        $0.layer.addSublayer(bottomLine)
+    }
     
-    private let checkPasswdTextField: UITextField = {
+    private let checkPasswdTextField = UITextField().then {
         let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "비밀번호 확인", attributes: attribute)
-        textField.isSecureTextEntry = true
         var bottomLine = CALayer()
         bottomLine.frame = CGRectMake(0.0, 45 - 1, 333, 1.0)
         bottomLine.backgroundColor = UIColor.gray.cgColor
-        textField.borderStyle = .none
-        textField.layer.addSublayer(bottomLine)
-        return textField
-    }()
+        $0.attributedPlaceholder = NSAttributedString(string: "비밀번호 확인", attributes: attribute)
+        $0.isSecureTextEntry = true
+        $0.borderStyle = .none
+        $0.layer.addSublayer(bottomLine)
+    }
     
-    private lazy var makeAccountButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemGray6
-        button.setTitle("새로운 카카오계정 만들기", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(touchupmakeAccountButton), for: .touchUpInside)
-        return button
-    }()
+    private lazy var makeAccountButton = UIButton().then {
+        $0.backgroundColor = .systemGray6
+        $0.setTitle("새로운 카카오계정 만들기", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        $0.setTitleColor(.black, for: .normal)
+        $0.addTarget(self, action: #selector(touchupmakeAccountButton), for: .touchUpInside)
+    }
     
     private func setLayout() {
         view.addSubviews(startKakaoTextLabel, idTextField, passwdTextField, checkPasswdTextField, makeAccountButton)

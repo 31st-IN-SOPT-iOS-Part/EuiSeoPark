@@ -13,98 +13,72 @@ class KakaoProfileViewController: UIViewController {
     
     // MARK: - Profile
     
-    private lazy var closeButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "profile_closeBtn"), for: .normal)
-        button.addTarget(self, action: #selector(touchUpCloseButton), for: .touchUpInside)
-        return button
-    }()
+    private lazy var closeButton = UIButton().then {
+        $0.setImage(UIImage(named: "profile_closeBtn"), for: .normal)
+        $0.addTarget(self, action: #selector(touchUpCloseButton), for: .touchUpInside)
+    }
     
-    private lazy var profileIconButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "profile_userImg"), for: .normal)
-        return button
-    }()
+    private lazy var profileIconButton = UIButton().then {
+        $0.setImage(UIImage(named: "profile_userImg"), for: .normal)
+    }
     
-    private let userNameTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "김솝트"
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 15)
-        return label
-    }()
+    private let userNameTextLabel = UILabel().then {
+        $0.text = "김솝트"
+        $0.textColor = .white
+        $0.textAlignment = .center
+        $0.font = .systemFont(ofSize: 15)
+    }
     
     // MARK: - Bottom Button StackView
-    private let chatIconImage: UIImageView = {
-       let image = UIImageView()
-        image.image = UIImage(named: "profileTalkImg")
-        return image
-    }()
+    private let chatIconImage = UIImageView().then {
+        $0.image = UIImage(named: "profileTalkImg")
+    }
     
-    private let chatTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "나와의 채팅"
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 10)
-        return label
-    }()
+    private let chatTextLabel = UILabel().then {
+        $0.text = "나와의 채팅"
+        $0.textColor = .white
+        $0.font = .systemFont(ofSize: 10)
+    }
     
-    private let editProfileImage: UIImageView = {
-       let image = UIImageView()
-        image.image = UIImage(named: "profile_editImg")
-        return image
-    }()
+    private let editProfileImage = UIImageView().then {
+        $0.image = UIImage(named: "profile_editImg")
+    }
     
-    private let editProfileTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "프로필 편집"
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 10)
-        return label
-    }()
+    private let editProfileTextLabel = UILabel().then {
+        $0.text = "프로필 편집"
+        $0.textColor = .white
+        $0.font = .systemFont(ofSize: 10)
+    }
     
-    private let kakaoStoryImage: UIImageView = {
-       let image = UIImageView()
-        image.image = UIImage(named: "profileStoryImg")
-        return image
-    }()
+    private let kakaoStoryImage = UIImageView().then {
+        $0.image = UIImage(named: "profileStoryImg")
+    }
     
-    private let kakaoStoryTextLabel: UILabel = {
-        let label = UILabel()
-        label.text = "카카오스토리"
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 10)
-        return label
-    }()
+    private let kakaoStoryTextLabel = UILabel().then {
+        $0.text = "카카오스토리"
+        $0.textColor = .white
+        $0.font = .systemFont(ofSize: 10)
+    }
     
-    private lazy var chatView: UIView = {
-        let view = UIView()
+    private lazy var chatView = UIView().then {
         let touchGesture = UITapGestureRecognizer(target: self, action:  #selector(touchUpChatView))
-        view.addGestureRecognizer(touchGesture)
-        return view
-    }()
+        $0.addGestureRecognizer(touchGesture)
+    }
     
-    private lazy var editProfileView: UIView = {
-        let view = UIView()
+    private lazy var editProfileView = UIView().then {
         let touchGesture = UITapGestureRecognizer(target: self, action:  #selector(touchUpEditProfileView))
-        view.addGestureRecognizer(touchGesture)
-        return view
-    }()
+        $0.addGestureRecognizer(touchGesture)
+    }
     
-    private lazy var kakaoStoryView: UIView = {
-        let view = UIView()
+    private lazy var kakaoStoryView = UIView().then {
         let touchGesture = UITapGestureRecognizer(target: self, action:  #selector(touchUpKakaoStoryView))
-        view.addGestureRecognizer(touchGesture)
-        return view
-    }()
+        $0.addGestureRecognizer(touchGesture)
+    }
     
     // MARK: - line
-    private let seperateLine: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGray5
-        return view
-    }()
+    private let seperateLine = UIView().then {
+        $0.backgroundColor = .systemGray5
+    }
     
     // MARK: - layout
     private func setLayout() {
