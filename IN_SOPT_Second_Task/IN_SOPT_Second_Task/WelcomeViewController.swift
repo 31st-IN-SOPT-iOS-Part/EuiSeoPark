@@ -48,6 +48,7 @@ final class WelcomeViewController: UIViewController {
     
     @objc private func touchupConfirmButton() {
         let friendListVC = FriendListViewController()
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
         
         if let userName  = name {
             friendListVC.dataBind(userName: userName)
@@ -59,17 +60,12 @@ final class WelcomeViewController: UIViewController {
         else {
             self.navigationController?.popViewController(animated: true)
         }
-        changeRootVC()
+        sceneDelegate.window?.rootViewController = friendListVC
     }
     
     func dataBind(userName: String) {
         name = userName
         firstTextLabel.text = "\(userName)님 \n환영합니다"
-    }
-    
-    private func changeRootVC() {
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = FriendListViewController()
     }
     
     override func viewDidLoad() {
