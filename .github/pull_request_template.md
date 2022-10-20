@@ -5,13 +5,14 @@
 - Assignees, Label을 붙여주세요.
 - 가능한 Issue를 링크해주세요.
 - PR이 승인된 경우 해당 브랜치는 삭제 부탁드립니다.
+- 상속받지 않은 클래스는 final 키워드 붙이기!
 ```
 
-# 관련 이슈
+### 관련 이슈
 closed #issue number
 
-# ☘️ 작업 내용
+### ☘️ 작업 내용
 
-# ✨ PR Point
+### ✨ PR Point
 
-# 📸 Screenshot
+### 📸 Screenshot
