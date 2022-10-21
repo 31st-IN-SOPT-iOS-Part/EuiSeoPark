@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class FriendListViewController: UIViewController {
+final class FriendListViewController: UIViewController {
     
     var name: String?
 

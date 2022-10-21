@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class KakaoProfileViewController: UIViewController {
+final class KakaoProfileViewController: UIViewController {
     
     // MARK: - Profile
     
