@@ -1,5 +1,5 @@
 ---
-name: 'Issue: iOS Part Issue Template'
+name: 'iOS Part Issue Template'
 about: "\U0001F34E iOS Part 과제물 이슈 템플릿입니다."
 title: ''
 labels: ''
