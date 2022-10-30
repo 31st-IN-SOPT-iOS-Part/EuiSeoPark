@@ -14,6 +14,8 @@
 		B85D1C01290EBBE30036ACAC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C00290EBBE30036ACAC /* ShopViewController.swift */; };
 		B85D1C03290EBBED0036ACAC /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C02290EBBED0036ACAC /* MoreViewController.swift */; };
 		B85D1C0A290EC1640036ACAC /* KakaoProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C09290EC1640036ACAC /* KakaoProfileModel.swift */; };
+		B85D1C0D290EC8F30036ACAC /* KakaoProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C0C290EC8F30036ACAC /* KakaoProfileTableViewCell.swift */; };
+		B85D1C10290ECCD90036ACAC /* SwiftyColor in Frameworks */ = {isa = PBXBuildFile; productRef = B85D1C0F290ECCD90036ACAC /* SwiftyColor */; };
 		B87A460828F5585900A305A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B87A460728F5585800A305A6 /* SnapKit */; };
 		B87A460C28F5BF4D00A305A6 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */; };
 		B87A460E28F5D90B00A305A6 /* KakaoProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */; };
@@ -35,6 +37,7 @@
 		B85D1C00290EBBE30036ACAC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		B85D1C02290EBBED0036ACAC /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		B85D1C09290EC1640036ACAC /* KakaoProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileModel.swift; sourceTree = "<group>"; };
+		B85D1C0C290EC8F30036ACAC /* KakaoProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileViewController.swift; sourceTree = "<group>"; };
 		B882734F28EB11E300B99A56 /* IN_SOPT_Third_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IN_SOPT_Third_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B87A460828F5585900A305A6 /* SnapKit in Frameworks */,
+				B85D1C10290ECCD90036ACAC /* SwiftyColor in Frameworks */,
 				B84EF07A28FD73A3006D2101 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +87,7 @@
 		B85D1C06290EBE8C0036ACAC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B85D1C0B290EC8D80036ACAC /* Cells */,
 				B85D1C08290EC04B0036ACAC /* Models */,
 				B85D1C07290EBE920036ACAC /* ViewControllers */,
 			);
@@ -112,6 +117,14 @@
 				B85D1C09290EC1640036ACAC /* KakaoProfileModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B85D1C0B290EC8D80036ACAC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1C0C290EC8F30036ACAC /* KakaoProfileTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B882734628EB11E300B99A56 = {
@@ -164,6 +177,7 @@
 			packageProductDependencies = (
 				B87A460728F5585800A305A6 /* SnapKit */,
 				B84EF07928FD73A3006D2101 /* Then */,
+				B85D1C0F290ECCD90036ACAC /* SwiftyColor */,
 			);
 			productName = IN_SOPT_First_Task_;
 			productReference = B882734F28EB11E300B99A56 /* IN_SOPT_Third_Task.app */;
@@ -196,6 +210,7 @@
 			packageReferences = (
 				B87A460628F5585800A305A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B84EF07828FD73A3006D2101 /* XCRemoteSwiftPackageReference "Then" */,
+				B85D1C0E290ECCD90036ACAC /* XCRemoteSwiftPackageReference "SwiftyColor" */,
 			);
 			productRefGroup = B882735028EB11E300B99A56 /* Products */;
 			projectDirPath = "";
@@ -225,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B882736728EC0E7500B99A56 /* NewAccountViewContoller.swift in Sources */,
+				B85D1C0D290EC8F30036ACAC /* KakaoProfileTableViewCell.swift in Sources */,
 				B85D1C03290EBBED0036ACAC /* MoreViewController.swift in Sources */,
 				B8BA3E1228F2D123003B764C /* AddSubViews.swift in Sources */,
 				B882735728EB11E300B99A56 /* KakaoLoginViewContoller.swift in Sources */,
@@ -465,6 +481,14 @@
 				kind = branch;
 			};
 		};
+		B85D1C0E290ECCD90036ACAC /* XCRemoteSwiftPackageReference "SwiftyColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/SwiftyColor";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B87A460628F5585800A305A6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -480,6 +504,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B84EF07828FD73A3006D2101 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		B85D1C0F290ECCD90036ACAC /* SwiftyColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B85D1C0E290ECCD90036ACAC /* XCRemoteSwiftPackageReference "SwiftyColor" */;
+			productName = SwiftyColor;
 		};
 		B87A460728F5585800A305A6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

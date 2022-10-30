@@ -31,10 +31,25 @@ final class FriendListViewController: UIViewController {
         $0.setImage(UIImage(named: "profile_userImg"), for: .normal)
         $0.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
     }
+    
+    private let kakaoProfileTableView = UITableView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false // 아직 이걸 왜 한느지 모르겠다.
+    }
+    
+    var kakaoProfileList: [KakaoProfile] = [
+        KakaoProfile(profileImage: "profileImage1", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage2", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage3", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage4", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage5", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage6", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage7", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage8", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfile(profileImage: "profileImage9", name: "솝트", statusMessage: "사랑해")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setLayout()
     }
 }
@@ -42,7 +57,8 @@ final class FriendListViewController: UIViewController {
 extension FriendListViewController {
     
     private func setLayout() {
-        view.addSubviews(friendTopView,myProfileView,friendsScrollView)
+        view.backgroundColor = .white
+        view.addSubviews(friendTopView,myProfileView,kakaoProfileTableView)
         friendTopView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(52)
@@ -67,14 +83,20 @@ extension FriendListViewController {
             $0.trailing.equalToSuperview().inset(15)
             $0.width.height.equalTo(19)
         }
-        
-        friendsScrollView.addSubviews(myProfileButton)
-        myProfileButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(7)
-            $0.leading.equalToSuperview().inset(14)
-            $0.width.equalTo(59)
-            $0.height.equalTo(58)
-            $0.bottom.equalToSuperview().inset(10)
+//
+//        friendsScrollView.addSubviews(myProfileButton)
+//        myProfileButton.snp.makeConstraints {
+//            $0.top.equalToSuperview().inset(7)
+//            $0.leading.equalToSuperview().inset(14)
+//            $0.width.equalTo(59)
+//            $0.height.equalTo(58)
+//            $0.bottom.equalToSuperview().inset(10)
+//        }
+        kakaoProfileTableView.snp.makeConstraints {
+            $0.top.equalTo(friendTopView.snp.bottom)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(50 * kakaoProfileList.count)
         }
     }
     
