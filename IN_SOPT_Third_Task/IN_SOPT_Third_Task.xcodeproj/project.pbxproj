@@ -61,6 +61,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B85D1C04290EBE4A0036ACAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1C05290EBE710036ACAC /* Extensions */,
+				B882735B28EB11E500B99A56 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B85D1C05290EBE710036ACAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8BA3E1128F2D123003B764C /* AddSubViews.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B85D1C06290EBE8C0036ACAC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1C08290EC04B0036ACAC /* Models */,
+				B85D1C07290EBE920036ACAC /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B85D1C07290EBE920036ACAC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B882735628EB11E300B99A56 /* KakaoLoginViewContoller.swift */,
+				B882736628EC0E7500B99A56 /* NewAccountViewContoller.swift */,
+				B882736828EC0FC900B99A56 /* WelcomeViewController.swift */,
+				B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */,
+				B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */,
+				B85D1C02290EBBED0036ACAC /* MoreViewController.swift */,
+				B85D1C00290EBBE30036ACAC /* ShopViewController.swift */,
+				B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */,
+				B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */,
+				B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B85D1C08290EC04B0036ACAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B882734628EB11E300B99A56 = {
 			isa = PBXGroup;
 			children = (
@@ -82,19 +132,9 @@
 			children = (
 				B882735228EB11E300B99A56 /* AppDelegate.swift */,
 				B882735428EB11E300B99A56 /* SceneDelegate.swift */,
-				B882735628EB11E300B99A56 /* KakaoLoginViewContoller.swift */,
-				B8BA3E1128F2D123003B764C /* AddSubViews.swift */,
-				B882736628EC0E7500B99A56 /* NewAccountViewContoller.swift */,
-				B882736828EC0FC900B99A56 /* WelcomeViewController.swift */,
-				B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */,
-				B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */,
-				B85D1C02290EBBED0036ACAC /* MoreViewController.swift */,
-				B85D1C00290EBBE30036ACAC /* ShopViewController.swift */,
-				B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */,
-				B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */,
-				B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */,
+				B85D1C04290EBE4A0036ACAC /* Resources */,
+				B85D1C06290EBE8C0036ACAC /* Sources */,
 				B882735828EB11E300B99A56 /* Main.storyboard */,
-				B882735B28EB11E500B99A56 /* Assets.xcassets */,
 				B882735D28EB11E500B99A56 /* LaunchScreen.storyboard */,
 				B882736028EB11E500B99A56 /* Info.plist */,
 			);
