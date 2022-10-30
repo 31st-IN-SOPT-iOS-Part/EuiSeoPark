@@ -22,11 +22,15 @@ final class FriendListViewController: UIViewController {
         $0.text = "친구"
     }
 
-    private let settingIconButton = UIButton().then {
+    private lazy var settingIconButton = UIButton().then {
         $0.setImage(UIImage(named: "iconSetting"), for: .normal)
+        $0.addTarget(self, action: #selector(touchUpSettingButton), for: .touchUpInside)
     }
     
-    private let myProfileImageView = UIImageView(image: UIImage(named: "imageFriend"))
+    private lazy var myProfileButton = UIButton().then {
+        $0.setImage(UIImage(named: "profile_userImg"), for: .normal)
+        $0.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +68,19 @@ extension FriendListViewController {
             $0.width.height.equalTo(19)
         }
         
-        myProfileView.addSubviews(myProfileImageView)
-        myProfileImageView.snp.makeConstraints {
+        friendsScrollView.addSubviews(myProfileButton)
+        myProfileButton.snp.makeConstraints {
             $0.top.equalToSuperview().inset(7)
             $0.leading.equalToSuperview().inset(14)
             $0.width.equalTo(59)
             $0.height.equalTo(58)
             $0.bottom.equalToSuperview().inset(10)
         }
+    }
+    
+    @objc
+    private func touchUpSettingButton() {
+        print("You touched setting icon")
     }
     
     @objc

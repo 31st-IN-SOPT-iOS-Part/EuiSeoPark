@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B84EF07A28FD73A3006D2101 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B84EF07928FD73A3006D2101 /* Then */; };
+		B85D1BFB290EBBA00036ACAC /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */; };
+		B85D1BFD290EBBC00036ACAC /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */; };
+		B85D1BFF290EBBD80036ACAC /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */; };
+		B85D1C01290EBBE30036ACAC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C00290EBBE30036ACAC /* ShopViewController.swift */; };
+		B85D1C03290EBBED0036ACAC /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C02290EBBED0036ACAC /* MoreViewController.swift */; };
 		B87A460828F5585900A305A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B87A460728F5585800A305A6 /* SnapKit */; };
 		B87A460C28F5BF4D00A305A6 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */; };
 		B87A460E28F5D90B00A305A6 /* KakaoProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
+		B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
+		B85D1C00290EBBE30036ACAC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		B85D1C02290EBBED0036ACAC /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileViewController.swift; sourceTree = "<group>"; };
 		B882734F28EB11E300B99A56 /* IN_SOPT_Third_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IN_SOPT_Third_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +87,11 @@
 				B882736628EC0E7500B99A56 /* NewAccountViewContoller.swift */,
 				B882736828EC0FC900B99A56 /* WelcomeViewController.swift */,
 				B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */,
+				B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */,
+				B85D1C02290EBBED0036ACAC /* MoreViewController.swift */,
+				B85D1C00290EBBE30036ACAC /* ShopViewController.swift */,
+				B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */,
+				B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */,
 				B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */,
 				B882735828EB11E300B99A56 /* Main.storyboard */,
 				B882735B28EB11E500B99A56 /* Assets.xcassets */,
@@ -167,12 +182,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B882736728EC0E7500B99A56 /* NewAccountViewContoller.swift in Sources */,
+				B85D1C03290EBBED0036ACAC /* MoreViewController.swift in Sources */,
 				B8BA3E1228F2D123003B764C /* AddSubViews.swift in Sources */,
 				B882735728EB11E300B99A56 /* KakaoLoginViewContoller.swift in Sources */,
 				B882736928EC0FC900B99A56 /* WelcomeViewController.swift in Sources */,
+				B85D1BFB290EBBA00036ACAC /* KakaoTabbarController.swift in Sources */,
+				B85D1BFD290EBBC00036ACAC /* PhotoGridViewController.swift in Sources */,
 				B87A460E28F5D90B00A305A6 /* KakaoProfileViewController.swift in Sources */,
 				B87A460C28F5BF4D00A305A6 /* FriendListViewController.swift in Sources */,
+				B85D1C01290EBBE30036ACAC /* ShopViewController.swift in Sources */,
 				B882735328EB11E300B99A56 /* AppDelegate.swift in Sources */,
+				B85D1BFF290EBBD80036ACAC /* SharpViewController.swift in Sources */,
 				B882735528EB11E300B99A56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
