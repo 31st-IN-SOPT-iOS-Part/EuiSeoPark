@@ -13,56 +13,61 @@ final class FriendListViewController: UIViewController {
     
     var name: String?
 
+    private let friendTopView = UIView()
+    private let myProfileView = UIView()
     private let friendsScrollView = UIScrollView()
-    
-    private let topBarView = UIView()
 
     private let friendTextLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 22, weight: .semibold)
         $0.text = "친구"
     }
-    
+
     private let settingIconButton = UIButton().then {
-        $0.setImage(UIImage(named: "settings 1"), for: .normal)
+        $0.setImage(UIImage(named: "iconSetting"), for: .normal)
     }
     
-    private lazy var profileIconButton = UIButton().then {
-        $0.setImage(UIImage(named: "profile_userImg"), for: .normal)
-        $0.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
+    private let myProfileImageView = UIImageView(image: UIImage(named: "imageFriend"))
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setLayout()
     }
+}
+
+extension FriendListViewController {
     
     private func setLayout() {
-        view.addSubviews(topBarView,friendsScrollView)
-        
-        topBarView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
+        view.addSubviews(friendTopView,myProfileView,friendsScrollView)
+        friendTopView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(52)
         }
-        
+        myProfileView.snp.makeConstraints {
+            $0.top.equalTo(friendTopView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(73)
+        }
         friendsScrollView.snp.makeConstraints {
-            $0.top.equalTo(topBarView.snp.bottom)
+            $0.top.equalTo(friendTopView.snp.bottom)
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
-        topBarView.addSubviews(friendTextLabel, settingIconButton)
-        
+        friendTopView.addSubviews(friendTextLabel, settingIconButton)
         friendTextLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(12)
+            $0.top.equalToSuperview().inset(15)
             $0.leading.equalToSuperview().inset(14)
         }
-        
         settingIconButton.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.leading.equalTo(friendTextLabel.snp.trailing).offset(4)
-            $0.width.height.equalTo(21)
+            $0.top.equalToSuperview().inset(17)
+            $0.trailing.equalToSuperview().inset(15)
+            $0.width.height.equalTo(19)
         }
         
-        friendsScrollView.addSubviews(profileIconButton)
-        
-        profileIconButton.snp.makeConstraints {
-            $0.top.equalTo(topBarView.snp.bottom).offset(15)
-            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(14)
+        myProfileView.addSubviews(myProfileImageView)
+        myProfileImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(7)
+            $0.leading.equalToSuperview().inset(14)
             $0.width.equalTo(59)
             $0.height.equalTo(58)
             $0.bottom.equalToSuperview().inset(10)
@@ -82,11 +87,5 @@ final class FriendListViewController: UIViewController {
     
     func dataBind(userName: String) {
             name = userName
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        setLayout()
     }
 }
