@@ -8,22 +8,74 @@
 import UIKit
 
 class PhotoGridViewController: UIViewController {
+    
+    private let chatTopView = UIView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private let chatTextLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 22, weight: .semibold)
+        $0.text = "채팅"
+    }
+    
+    private let openChatTextLabel = UILabel().then {
+        $0.textColor = 0xA6A6A6.color
+        $0.font = .systemFont(ofSize: 22, weight: .semibold)
+        $0.text = "오픈채팅"
+    }
+    
+    private let moreViewButton = UIButton().then {
+        $0.setImage(UIImage(named: "iconPlus"), for: .normal)
+        $0.addTarget(self, action: #selector(touchUpMoreViewButton), for: .touchUpInside)
+    }
+    
+    private lazy var settingIconButton = UIButton().then {
+        $0.setImage(UIImage(named: "iconSetting"), for: .normal)
+        $0.addTarget(self, action: #selector(touchUpSettingButton), for: .touchUpInside)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setLayout()
     }
-    */
+}
 
+extension PhotoGridViewController {
+    private func setLayout() {
+        view.backgroundColor = .white
+        view.addSubviews(chatTopView)
+        chatTopView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(52)
+        }
+        
+        chatTopView.addSubviews(chatTextLabel, openChatTextLabel, moreViewButton, settingIconButton)
+        chatTextLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(15)
+            $0.leading.equalToSuperview().inset(14)
+        }
+        openChatTextLabel.snp.makeConstraints {
+            $0.top.equalTo(chatTextLabel)
+            $0.leading.equalTo(chatTextLabel.snp.trailing).offset(7)
+        }
+        settingIconButton.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(17)
+            $0.trailing.equalToSuperview().inset(15)
+            $0.width.height.equalTo(19)
+        }
+        moreViewButton.snp.makeConstraints {
+            $0.top.equalTo(settingIconButton)
+            $0.trailing.equalTo(settingIconButton.snp.leading).offset(-12)
+            $0.width.height.equalTo(19)
+        }
+    }
+    
+    @objc
+    private func touchUpSettingButton() {
+        print("You touched setting icon")
+    }
+    
+    @objc
+    private func touchUpMoreViewButton() {
+        print("You touched more view icon")
+    }
 }
