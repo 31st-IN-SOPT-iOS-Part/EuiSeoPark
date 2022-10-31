@@ -14,8 +14,6 @@ final class FriendListViewController: UIViewController {
     var name: String?
 
     private let friendTopView = UIView()
-    private let myProfileView = UIView()
-    private let friendsScrollView = UIScrollView()
 
     private let friendTextLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 22, weight: .semibold)
@@ -62,20 +60,11 @@ extension FriendListViewController {
     
     private func setLayout() {
         view.backgroundColor = .white
-        view.addSubviews(friendTopView,myProfileView,kakaoProfileTableView)
+        view.addSubviews(friendTopView,kakaoProfileTableView)
         friendTopView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(52)
         }
-        myProfileView.snp.makeConstraints {
-            $0.top.equalTo(friendTopView.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(73)
-        }
-//        friendsScrollView.snp.makeConstraints {
-//            $0.top.equalTo(friendTopView.snp.bottom)
-//            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-//        }
         
         friendTopView.addSubviews(friendTextLabel, settingIconButton)
         friendTextLabel.snp.makeConstraints {
@@ -87,15 +76,7 @@ extension FriendListViewController {
             $0.trailing.equalToSuperview().inset(15)
             $0.width.height.equalTo(19)
         }
-//
-//        friendsScrollView.addSubviews(myProfileButton)
-//        myProfileButton.snp.makeConstraints {
-//            $0.top.equalToSuperview().inset(7)
-//            $0.leading.equalToSuperview().inset(14)
-//            $0.width.equalTo(59)
-//            $0.height.equalTo(58)
-//            $0.bottom.equalToSuperview().inset(10)
-//        }
+        
         kakaoProfileTableView.snp.makeConstraints {
             $0.top.equalTo(friendTopView.snp.bottom)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -129,9 +110,14 @@ extension FriendListViewController {
     }
 }
 
+
 extension FriendListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 73
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
     }
 }
 
