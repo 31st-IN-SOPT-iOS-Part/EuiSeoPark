@@ -32,7 +32,6 @@ class PhotoGridViewController: UIViewController {
         $0.addTarget(self, action: #selector(touchUpSettingButton), for: .touchUpInside)
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
