@@ -22,9 +22,9 @@ class PhotoGridViewController: UIViewController {
         $0.text = "오픈채팅"
     }
     
-    private let moreViewButton = UIButton().then {
+    private lazy var moreButton = UIButton().then {
         $0.setImage(UIImage(named: "iconPlus"), for: .normal)
-        $0.addTarget(self, action: #selector(touchUpMoreViewButton), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(presentToMoreVC), for: .touchUpInside)
     }
     
     private lazy var settingIconButton = UIButton().then {
@@ -48,7 +48,7 @@ extension PhotoGridViewController {
             $0.height.equalTo(52)
         }
         
-        chatTopView.addSubviews(chatTextLabel, openChatTextLabel, moreViewButton, settingIconButton)
+        chatTopView.addSubviews(chatTextLabel, openChatTextLabel, moreButton, settingIconButton)
         chatTextLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(15)
             $0.leading.equalToSuperview().inset(14)
@@ -62,7 +62,7 @@ extension PhotoGridViewController {
             $0.trailing.equalToSuperview().inset(15)
             $0.width.height.equalTo(19)
         }
-        moreViewButton.snp.makeConstraints {
+        moreButton.snp.makeConstraints {
             $0.top.equalTo(settingIconButton)
             $0.trailing.equalTo(settingIconButton.snp.leading).offset(-12)
             $0.width.height.equalTo(19)
@@ -75,7 +75,14 @@ extension PhotoGridViewController {
     }
     
     @objc
-    private func touchUpMoreViewButton() {
+    private func touchUpMoreButton() {
         print("You touched more view icon")
+    }
+    
+    @objc
+    private func presentToMoreVC() {
+        let moreVC = MoreViewController()
+        moreVC.modalPresentationStyle = .fullScreen
+        self.present(moreVC, animated: true, completion: nil)
     }
 }

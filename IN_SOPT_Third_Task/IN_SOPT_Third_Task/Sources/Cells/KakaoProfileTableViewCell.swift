@@ -50,7 +50,6 @@ extension KakaoProfileTableViewCell {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        
         contentView.addSubviews(profileImageView,nameTextLabel,statusMessageTextLabel)
         
         profileImageView.snp.makeConstraints {
