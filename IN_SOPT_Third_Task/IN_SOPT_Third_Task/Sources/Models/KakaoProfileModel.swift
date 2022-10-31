@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct KakaoProfile {
+struct KakaoProfileModel {
     let profileImage: String
     let name: String
     let statusMessage: String

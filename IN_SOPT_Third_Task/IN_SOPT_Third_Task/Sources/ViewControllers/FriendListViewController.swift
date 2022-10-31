@@ -32,25 +32,29 @@ final class FriendListViewController: UIViewController {
         $0.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
     }
     
-    private let kakaoProfileTableView = UITableView().then {
+    private lazy var kakaoProfileTableView = UITableView().then {
+        $0.backgroundColor = .clear
         $0.translatesAutoresizingMaskIntoConstraints = false // 아직 이걸 왜 한느지 모르겠다.
+        $0.delegate = self
+        $0.dataSource = self
     }
     
-    var kakaoProfileList: [KakaoProfile] = [
-        KakaoProfile(profileImage: "profileImage1", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage2", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage3", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage4", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage5", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage6", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage7", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage8", name: "솝트", statusMessage: "사랑해"),
-        KakaoProfile(profileImage: "profileImage9", name: "솝트", statusMessage: "사랑해")
+    var kakaoProfileList: [KakaoProfileModel] = [
+        KakaoProfileModel(profileImage: "profileImage1", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage2", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage3", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage4", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage5", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage6", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage7", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage8", name: "솝트", statusMessage: "사랑해"),
+        KakaoProfileModel(profileImage: "profileImage9", name: "솝트", statusMessage: "사랑해")
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
+        register()
     }
 }
 
@@ -68,10 +72,10 @@ extension FriendListViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(73)
         }
-        friendsScrollView.snp.makeConstraints {
-            $0.top.equalTo(friendTopView.snp.bottom)
-            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
+//        friendsScrollView.snp.makeConstraints {
+//            $0.top.equalTo(friendTopView.snp.bottom)
+//            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+//        }
         
         friendTopView.addSubviews(friendTextLabel, settingIconButton)
         friendTextLabel.snp.makeConstraints {
@@ -100,6 +104,10 @@ extension FriendListViewController {
         }
     }
     
+    private func register() {
+        kakaoProfileTableView.register(KakaoProfileTableViewCell.self, forCellReuseIdentifier: KakaoProfileTableViewCell.identifier)
+    }
+    
     @objc
     private func touchUpSettingButton() {
         print("You touched setting icon")
@@ -118,5 +126,24 @@ extension FriendListViewController {
     
     func dataBind(userName: String) {
             name = userName
+    }
+}
+
+extension FriendListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+}
+
+extension FriendListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return kakaoProfileList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let profileViewCell = tableView.dequeueReusableCell(withIdentifier: KakaoProfileTableViewCell.identifier, for: indexPath) as? KakaoProfileTableViewCell else { return UITableViewCell() }
+        
+        profileViewCell.dataBind(model: kakaoProfileList[indexPath.row])
+        return profileViewCell
     }
 }
