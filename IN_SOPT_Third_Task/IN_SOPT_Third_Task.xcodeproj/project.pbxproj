@@ -19,6 +19,7 @@
 		B85D1C13290FC2690036ACAC /* KakaoProfileTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C12290FC2690036ACAC /* KakaoProfileTableViewHeaderView.swift */; };
 		B85D1C172912AEDF0036ACAC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C162912AEDF0036ACAC /* ChatViewController.swift */; };
 		B85D1C192912C6780036ACAC /* PhotoGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C182912C6780036ACAC /* PhotoGridModel.swift */; };
+		B85D1C1B2912CDAA0036ACAC /* PhotoGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1C1A2912CDAA0036ACAC /* PhotoGridCollectionViewCell.swift */; };
 		B87A460828F5585900A305A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B87A460728F5585800A305A6 /* SnapKit */; };
 		B87A460C28F5BF4D00A305A6 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */; };
 		B87A460E28F5D90B00A305A6 /* KakaoProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */; };
@@ -44,6 +45,7 @@
 		B85D1C12290FC2690036ACAC /* KakaoProfileTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileTableViewHeaderView.swift; sourceTree = "<group>"; };
 		B85D1C162912AEDF0036ACAC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B85D1C182912C6780036ACAC /* PhotoGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridModel.swift; sourceTree = "<group>"; };
+		B85D1C1A2912CDAA0036ACAC /* PhotoGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoProfileViewController.swift; sourceTree = "<group>"; };
 		B882734F28EB11E300B99A56 /* IN_SOPT_Third_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IN_SOPT_Third_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B85D1C0C290EC8F30036ACAC /* KakaoProfileTableViewCell.swift */,
+				B85D1C1A2912CDAA0036ACAC /* PhotoGridCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				B8BA3E1228F2D123003B764C /* AddSubViews.swift in Sources */,
 				B882735728EB11E300B99A56 /* KakaoLoginViewContoller.swift in Sources */,
 				B882736928EC0FC900B99A56 /* WelcomeViewController.swift in Sources */,
+				B85D1C1B2912CDAA0036ACAC /* PhotoGridCollectionViewCell.swift in Sources */,
 				B85D1BFB290EBBA00036ACAC /* KakaoTabbarController.swift in Sources */,
 				B85D1BFD290EBBC00036ACAC /* PhotoGridViewController.swift in Sources */,
 				B87A460E28F5D90B00A305A6 /* KakaoProfileViewController.swift in Sources */,
