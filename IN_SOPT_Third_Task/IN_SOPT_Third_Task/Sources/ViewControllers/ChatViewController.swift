@@ -36,7 +36,7 @@ class ChatViewController: UIViewController {
         $0.image = UIImage(named: "chatHeader")
     }
     
-    private lazy var kakaoProfileTableView = UITableView.init(frame: .zero, style: .grouped).then {
+    private lazy var kakaoChatTableView = UITableView.init(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .clear
         $0.tableHeaderView = chatHeaderView
         $0.separatorStyle = .none
@@ -61,14 +61,14 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         setLayout()
         register()
-        kakaoProfileTableView.layoutIfNeeded()
+        kakaoChatTableView.layoutIfNeeded()
     }
 }
 
 extension ChatViewController {
     private func setLayout() {
         view.backgroundColor = .white
-        view.addSubviews(chatTopView, kakaoProfileTableView)
+        view.addSubviews(chatTopView, kakaoChatTableView)
         chatTopView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(52)
@@ -94,7 +94,7 @@ extension ChatViewController {
             $0.width.height.equalTo(19)
         }
         
-        kakaoProfileTableView.snp.makeConstraints {
+        kakaoChatTableView.snp.makeConstraints {
             $0.top.equalTo(chatTopView.snp.bottom)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
@@ -126,7 +126,7 @@ extension ChatViewController {
     }
     
     private func register() {
-        kakaoProfileTableView.register(KakaoProfileTableViewCell.self, forCellReuseIdentifier: KakaoProfileTableViewCell.identifier)
+        kakaoChatTableView.register(KakaoProfileTableViewCell.self, forCellReuseIdentifier: KakaoProfileTableViewCell.identifier)
     }
     
 }
