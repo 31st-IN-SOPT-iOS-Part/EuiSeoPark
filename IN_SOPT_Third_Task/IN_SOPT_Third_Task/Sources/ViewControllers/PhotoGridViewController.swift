@@ -20,6 +20,20 @@ class PhotoGridViewController: UIViewController {
         $0.font = .systemFont(ofSize: 16)
         $0.text = "최근 항목"
     }
+    
+    private let photosCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.isScrollEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
