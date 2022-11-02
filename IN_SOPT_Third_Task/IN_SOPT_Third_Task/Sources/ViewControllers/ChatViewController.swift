@@ -37,7 +37,7 @@ class ChatViewController: UIViewController {
         $0.image = UIImage(named: "chatHeader")
     }
     
-    private lazy var kakaoChatTableView = UITableView.init(frame: .zero, style: .grouped).then {
+    private lazy var kakaoChatTableView = UITableView().then {
         $0.backgroundColor = .clear
         $0.tableHeaderView = chatHeaderView
         $0.separatorStyle = .none
@@ -139,10 +139,6 @@ extension ChatViewController {
 }
 
 extension ChatViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 73
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         50
     }

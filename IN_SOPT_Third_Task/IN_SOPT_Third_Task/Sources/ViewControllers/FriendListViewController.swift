@@ -43,7 +43,7 @@ final class FriendListViewController: UIViewController {
         $0.textColor = 0xA6A6A6.color
     }
     
-    private lazy var kakaoProfileTableView = UITableView.init(frame: .zero, style: .grouped).then {
+    private lazy var kakaoProfileTableView = UITableView().then {
         $0.backgroundColor = .clear
         $0.tableHeaderView = myProfileView
         $0.separatorStyle = .none
@@ -150,10 +150,6 @@ extension FriendListViewController {
 
 
 extension FriendListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 73
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         50
     }
