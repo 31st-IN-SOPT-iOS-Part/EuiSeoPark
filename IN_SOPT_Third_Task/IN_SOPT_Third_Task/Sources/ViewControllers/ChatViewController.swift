@@ -32,7 +32,8 @@ class ChatViewController: UIViewController {
         $0.addTarget(self, action: #selector(touchUpSettingButton), for: .touchUpInside)
     }
     
-    private let chatHeaderView = UIImageView().then {
+    private let chatHeaderView = UIView()
+    private let chatHeaderImageView = UIImageView().then {
         $0.image = UIImage(named: "chatHeader")
     }
     
@@ -100,11 +101,17 @@ extension ChatViewController {
             $0.bottom.equalToSuperview()
             $0.height.equalTo(50 * kakaoProfileList.count)
         }
-
+        
+        chatHeaderView.addSubviews(chatHeaderImageView)
         chatHeaderView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.height.equalTo(71)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(80)
+        }
+        chatHeaderImageView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().inset(9)
         }
     }
     
