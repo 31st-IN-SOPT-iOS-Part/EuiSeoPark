@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftyColor
 import Then
 
 final class FriendListViewController: UIViewController {
@@ -14,6 +15,7 @@ final class FriendListViewController: UIViewController {
     var name: String?
 
     private let friendTopView = UIView()
+    private let myProfileView = UIView()
 
     private let friendTextLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 22, weight: .semibold)
@@ -30,9 +32,22 @@ final class FriendListViewController: UIViewController {
         $0.addTarget(self, action: #selector(presentToProfileVC), for: .touchUpInside)
     }
     
-    private lazy var kakaoProfileTableView = UITableView().then {
+    private let myProfileName = UILabel().then {
+        $0.text = "김솝트"
+        $0.font = .systemFont(ofSize: 16, weight: .semibold)
+    }
+    
+    private let myStatusMessage = UILabel().then {
+        $0.text = "하이루"
+        $0.font = .systemFont(ofSize: 11)
+        $0.textColor = 0xA6A6A6.color
+    }
+    
+    private lazy var kakaoProfileTableView = UITableView.init(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .clear
-        $0.translatesAutoresizingMaskIntoConstraints = false // 아직 이걸 왜 한느지 모르겠다.
+        $0.tableHeaderView = myProfileView
+        $0.separatorStyle = .none
+        $0.translatesAutoresizingMaskIntoConstraints = false
         $0.delegate = self
         $0.dataSource = self
     }
@@ -53,6 +68,7 @@ final class FriendListViewController: UIViewController {
         super.viewDidLoad()
         setLayout()
         register()
+        kakaoProfileTableView.layoutIfNeeded()
     }
 }
 
@@ -76,6 +92,28 @@ extension FriendListViewController {
             $0.trailing.equalToSuperview().inset(15)
             $0.width.height.equalTo(19)
         }
+        
+        myProfileView.addSubviews(myProfileButton, myProfileName, myStatusMessage)
+        myProfileView.snp.makeConstraints {
+            $0.top.equalTo(friendTopView.snp.bottom)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(73)
+        }
+        myProfileButton.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(7)
+            $0.leading.equalToSuperview().inset(16)
+            $0.width.equalTo(59)
+            $0.height.equalTo(58)
+        }
+        myProfileName.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(19)
+            $0.leading.equalTo(myProfileButton.snp.trailing).offset(11)
+        }
+        myStatusMessage.snp.makeConstraints {
+            $0.top.equalTo(myProfileName.snp.bottom).offset(6)
+            $0.leading.equalTo(myProfileName)
+        }
+        
         
         kakaoProfileTableView.snp.makeConstraints {
             $0.top.equalTo(friendTopView.snp.bottom)
