@@ -32,9 +32,13 @@ class ChatViewController: UIViewController {
         $0.addTarget(self, action: #selector(touchUpSettingButton), for: .touchUpInside)
     }
     
+    private let chatHeaderView = UIImageView().then {
+        $0.image = UIImage(named: "chatHeader")
+    }
+    
     private lazy var kakaoProfileTableView = UITableView.init(frame: .zero, style: .grouped).then {
         $0.backgroundColor = .clear
-//        $0.tableHeaderView = myProfileView
+        $0.tableHeaderView = chatHeaderView
         $0.separatorStyle = .none
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.delegate = self
@@ -95,6 +99,12 @@ extension ChatViewController {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
             $0.height.equalTo(50 * kakaoProfileList.count)
+        }
+
+        chatHeaderView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+            $0.height.equalTo(71)
         }
     }
     
