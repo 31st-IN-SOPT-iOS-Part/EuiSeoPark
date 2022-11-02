@@ -95,7 +95,7 @@ extension FriendListViewController {
         
         myProfileView.addSubviews(myProfileButton, myProfileName, myStatusMessage)
         myProfileView.snp.makeConstraints {
-            $0.top.equalTo(friendTopView.snp.bottom)
+            $0.top.equalToSuperview()
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(73)
         }
