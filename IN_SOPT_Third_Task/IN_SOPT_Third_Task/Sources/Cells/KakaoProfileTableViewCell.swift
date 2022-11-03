@@ -10,7 +10,7 @@ import SwiftyColor
 
 final class KakaoProfileTableViewCell: UITableViewCell {
     
-    // MARK: - identifire
+    // MARK: - identifier
     static let identifier = "KakaoProfileTableViewCell"
     
     // MARK: - LifeCycles

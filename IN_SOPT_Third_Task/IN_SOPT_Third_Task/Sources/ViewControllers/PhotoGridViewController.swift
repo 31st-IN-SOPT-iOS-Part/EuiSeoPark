@@ -21,7 +21,7 @@ class PhotoGridViewController: UIViewController {
         $0.text = "최근 항목"
     }
     
-    private let photoGridCollectionView: UICollectionView = {
+    private lazy var photoGridCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
@@ -30,6 +30,8 @@ class PhotoGridViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isScrollEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         return collectionView
     }()
     
@@ -46,6 +48,7 @@ class PhotoGridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLayout()
+        register()
     }
 }
 
@@ -76,14 +79,63 @@ extension PhotoGridViewController {
         }
     }
     
-    private func calculateCellHeight() -> CGFloat {
-            let count = CGFloat(photoGridList.count)
-            let heightCount = count / 3 + count.truncatingRemainder(dividingBy: 3)
-            return heightCount * photoGridCellHeight + (heightCount - 1) * photoGridLineSpacing + photoGridInset.top + photoGridInset.bottom
-    }
-    
     @objc
     private func touchUpCloseButton() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func calculateCellHeight() -> CGFloat {
+        let count = CGFloat(photoGridList.count)
+        let heightCount = count / 3 + count.truncatingRemainder(dividingBy: 3)
+        return heightCount * photoGridCellHeight + (heightCount - 1) * photoGridLineSpacing + photoGridInset.top + photoGridInset.bottom
+    }
+    
+    private func register() {
+        photoGridCollectionView.register(PhotoGridCollectionViewCell.self, forCellWithReuseIdentifier: PhotoGridCollectionViewCell.identifier)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension PhotoGridViewController: UICollectionViewDelegateFlowLayout {
+
+        // cell 하나의 크기를 정해주는 함수에요. CGSize를 리턴합니다.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        let tripleCellWidth = screenWidth - photoGridInset.left - photoGridInset.right - photoGridInterItemSpacing
+        return CGSize(width: tripleCellWidth / 3, height: 119)
+    }
+    
+        // Layout 구현 흐름에서 줄 바꿈의 간격을 정해주는 함수에요.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return photoGridLineSpacing
+    }
+    
+        // Layout 구현 흐름에서 줄 바꿈이 아닌 셀 간 간격을 정해주는 함수에요.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return photoGridInterItemSpacing / 3
+    }
+    
+        // CollectionView 섹션 하나 당의 Inset을 정해주는 함수에요.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return photoGridInset
+    }
+}
+
+// MARK: -UICollectionViewDataSource
+
+extension PhotoGridViewController: UICollectionViewDataSource {
+        
+        // cell 몇 개 만들래? 라고 물어봅니다,,,
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoGridList.count
+    }
+    
+        // 어떤 cell을 만들거니? 라고 물어보네요,,,
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let photoGridCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: PhotoGridCollectionViewCell.identifier, for: indexPath)
+                as? PhotoGridCollectionViewCell else { return UICollectionViewCell() }
+        photoGridCell.dataBind(model: photoGridList[indexPath.item])
+        return photoGridCell
     }
 }

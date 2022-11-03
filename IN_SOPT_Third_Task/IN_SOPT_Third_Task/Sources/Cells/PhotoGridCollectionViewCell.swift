@@ -10,8 +10,8 @@ import SnapKit
 import Then
 
 final class PhotoGridCollectionViewCell: UICollectionViewCell {
-    // MARK: - identifire
-    static let identifire = "PhotoGridCollectionViewCell"
+    // MARK: - identifier
+    static let identifier = "PhotoGridCollectionViewCell"
     
     // MARK: - UI Components
     private let photoImageView = UIImageView()
