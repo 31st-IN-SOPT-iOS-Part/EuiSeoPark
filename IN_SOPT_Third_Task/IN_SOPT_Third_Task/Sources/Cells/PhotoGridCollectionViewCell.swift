@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftyColor
 import Then
 
 final class PhotoGridCollectionViewCell: UICollectionViewCell {
@@ -24,9 +25,31 @@ final class PhotoGridCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
 }
 
 extension PhotoGridCollectionViewCell {
+    
+    override var isSelected: Bool {
+        willSet {
+            self.setSelected(newValue)
+        }
+    }
+    
+    func configure(number: Int) {
+        self.setSelected(true)
+    }
+    
+    private func setSelected(_ selected: Bool) {
+        if selected {
+            self.layer.borderWidth = 3
+            self.layer.borderColor = 0xF6DD2A.color.cgColor
+        } else {
+            self.layer.borderWidth = 0
+        }
+    }
+    
     private func setLayout() {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
