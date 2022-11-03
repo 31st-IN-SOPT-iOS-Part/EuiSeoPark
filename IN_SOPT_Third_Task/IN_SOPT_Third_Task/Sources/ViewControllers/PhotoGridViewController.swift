@@ -21,6 +21,14 @@ class PhotoGridViewController: UIViewController {
         $0.text = "최근 항목"
     }
     
+    private lazy var sendTextLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 14)
+        $0.text = "전송"
+        let touchUpEvent = UITapGestureRecognizer(target: self, action: #selector(touchUpSendTextLabel))
+        $0.isUserInteractionEnabled = true
+        $0.addGestureRecognizer(touchUpEvent)
+    }
+    
     private lazy var photoGridCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -62,7 +70,7 @@ extension PhotoGridViewController {
             $0.height.equalTo(38)
         }
         
-        photoGridTopView.addSubviews(closeIconButton, recentImageTextLabel)
+        photoGridTopView.addSubviews(closeIconButton, recentImageTextLabel, sendTextLabel)
         closeIconButton.snp.makeConstraints {
             $0.top.equalToSuperview().inset(7)
             $0.leading.equalToSuperview().inset(12)
@@ -71,6 +79,10 @@ extension PhotoGridViewController {
         recentImageTextLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(11)
             $0.centerX.equalToSuperview()
+        }
+        sendTextLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(11)
+            $0.trailing.equalToSuperview().inset(7)
         }
         
         photoGridCollectionView.snp.makeConstraints {
@@ -82,6 +94,11 @@ extension PhotoGridViewController {
     @objc
     private func touchUpCloseButton() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc
+    private func touchUpSendTextLabel() {
+        print("You touched Send Text Label")
     }
     
     private func calculateCellHeight() -> CGFloat {
