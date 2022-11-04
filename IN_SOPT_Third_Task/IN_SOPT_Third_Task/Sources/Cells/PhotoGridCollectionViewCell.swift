@@ -37,7 +37,7 @@ extension PhotoGridCollectionViewCell {
         }
     }
     
-    func configure(number: Int) {
+    private func configure(number: Int) {
         self.setSelected(true)
     }
     

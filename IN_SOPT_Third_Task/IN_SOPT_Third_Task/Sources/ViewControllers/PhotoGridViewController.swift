@@ -133,27 +133,6 @@ extension PhotoGridViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return photoGridInset
     }
-
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        UIView.dra
-//        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
-//            cell?.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
-//        })
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
-//            cell?.transform = .identity
-//        })
-//    }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        photoGridList.append(photoGridList[indexPath.row])
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        cell?.layer.borderWidth = 2.0
-//        cell?.layer.borderColor = UIColor.gray.cgColor
-//    }
 }
 
 // MARK: -UICollectionViewDataSource
