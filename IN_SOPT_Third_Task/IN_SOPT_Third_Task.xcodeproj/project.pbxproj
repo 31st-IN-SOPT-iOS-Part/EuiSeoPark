@@ -75,6 +75,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B82DC8022917BBA5003B4972 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				B882735628EB11E300B99A56 /* KakaoLoginViewContoller.swift */,
+				B882736628EC0E7500B99A56 /* NewAccountViewContoller.swift */,
+				B882736828EC0FC900B99A56 /* WelcomeViewController.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		B82DC8032917BBB8003B4972 /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */,
+				B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */,
+			);
+			path = FriendList;
+			sourceTree = "<group>";
+		};
+		B82DC8042917BBDB003B4972 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		B82DC8052917BBEA003B4972 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1C162912AEDF0036ACAC /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		B82DC8062917BBF5003B4972 /* PhotoGrid */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */,
+			);
+			path = PhotoGrid;
+			sourceTree = "<group>";
+		};
+		B82DC8072917BC29003B4972 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1C00290EBBE30036ACAC /* ShopViewController.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		B82DC8082917BC33003B4972 /* Sharp */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */,
+			);
+			path = Sharp;
+			sourceTree = "<group>";
+		};
+		B82DC8092917BC40003B4972 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				B85D1C02290EBBED0036ACAC /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		B85D1C04290EBE4A0036ACAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,17 +173,14 @@
 		B85D1C07290EBE920036ACAC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B882735628EB11E300B99A56 /* KakaoLoginViewContoller.swift */,
-				B882736628EC0E7500B99A56 /* NewAccountViewContoller.swift */,
-				B882736828EC0FC900B99A56 /* WelcomeViewController.swift */,
-				B87A460B28F5BF4D00A305A6 /* FriendListViewController.swift */,
-				B85D1BFA290EBBA00036ACAC /* KakaoTabbarController.swift */,
-				B85D1C162912AEDF0036ACAC /* ChatViewController.swift */,
-				B85D1C02290EBBED0036ACAC /* MoreViewController.swift */,
-				B85D1C00290EBBE30036ACAC /* ShopViewController.swift */,
-				B85D1BFE290EBBD80036ACAC /* SharpViewController.swift */,
-				B85D1BFC290EBBC00036ACAC /* PhotoGridViewController.swift */,
-				B87A460D28F5D90B00A305A6 /* KakaoProfileViewController.swift */,
+				B82DC8042917BBDB003B4972 /* TabBar */,
+				B82DC8032917BBB8003B4972 /* FriendList */,
+				B82DC8092917BC40003B4972 /* More */,
+				B82DC8082917BC33003B4972 /* Sharp */,
+				B82DC8072917BC29003B4972 /* Shop */,
+				B82DC8052917BBEA003B4972 /* Chat */,
+				B82DC8062917BBF5003B4972 /* PhotoGrid */,
+				B82DC8022917BBA5003B4972 /* LogIn */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
