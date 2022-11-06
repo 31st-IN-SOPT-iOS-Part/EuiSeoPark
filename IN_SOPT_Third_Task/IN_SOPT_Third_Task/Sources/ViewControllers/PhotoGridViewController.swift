@@ -10,6 +10,7 @@ import UIKit
 class PhotoGridViewController: UIViewController {
     
     private let photoGridTopView = UIView()
+    private var selectedImageList = [Int]()
 
     private lazy var closeIconButton = UIButton().then {
         $0.setImage(UIImage(named: "iconClose"), for: .normal)
@@ -149,5 +150,23 @@ extension PhotoGridViewController: UICollectionViewDataSource {
                 as? PhotoGridCollectionViewCell else { return UICollectionViewCell() }
         photoGridCell.dataBind(model: photoGridList[indexPath.item])
         return photoGridCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let imageCell = collectionView.cellForItem(at: indexPath) as! PhotoGridCollectionViewCell
+                if selectedImageList.contains(indexPath.row) {
+                    guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
+                    selectedImageList.remove(at: index)
+                    imageCell.setUnselected()
+                    selectedImageList.forEach {
+                        let cell = collectionView.cellForItem(at: [0, $0]) as! PhotoGridCollectionViewCell
+                        guard let newIndex = selectedImageList.firstIndex(of: $0) else { return }
+                        cell.changeIndexLabel(index: newIndex)
+                    }
+                } else {
+                    selectedImageList.append(indexPath.row)
+                    guard let index = selectedImageList.firstIndex(of: indexPath.row) else { return }
+                    imageCell.setSelected(index: index)
+                }
     }
 }

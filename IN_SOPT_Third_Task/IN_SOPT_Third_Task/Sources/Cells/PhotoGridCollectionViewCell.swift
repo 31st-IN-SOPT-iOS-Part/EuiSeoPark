@@ -17,6 +17,17 @@ final class PhotoGridCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Components
     private let photoImageView = UIImageView()
     
+    private let indexView = UIView().then {
+        $0.backgroundColor = 0xF6DD2A.color
+        $0.layer.cornerRadius = 9
+        $0.isHidden = true
+    }
+    
+    private let indexTextLabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 10)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
@@ -25,38 +36,43 @@ final class PhotoGridCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
 
 extension PhotoGridCollectionViewCell {
     
-    override var isSelected: Bool {
-        willSet {
-            self.setSelected(newValue)
-        }
+    public func setSelected(index: Int) {
+        photoImageView.layer.borderWidth = 3
+        photoImageView.layer.borderColor = 0xF6DD2A.color.cgColor
+        indexView.isHidden = false
+        indexTextLabel.text = String(index + 1)
+    }
+
+    public func setUnselected() {
+        photoImageView.layer.borderWidth = 0
+        photoImageView.layer.borderColor = .none
+        indexView.isHidden = true
     }
     
-    private func configure(number: Int) {
-        self.setSelected(true)
-    }
-    
-    private func setSelected(_ selected: Bool) {
-        if selected {
-            self.layer.borderWidth = 3
-            self.layer.borderColor = 0xF6DD2A.color.cgColor
-        } else {
-            self.layer.borderWidth = 0
-        }
+    public func changeIndexLabel(index: Int) {
+        indexTextLabel.text = String(index + 1)
     }
     
     private func setLayout() {
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         
-        contentView.addSubviews(photoImageView)
+        contentView.addSubviews(photoImageView, indexView)
         photoImageView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        indexView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(4)
+            $0.trailing.equalToSuperview().inset(4)
+            $0.width.height.equalTo(18)
+        }
+        indexView.addSubviews(indexTextLabel)
+        indexTextLabel.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
         }
     }
     
