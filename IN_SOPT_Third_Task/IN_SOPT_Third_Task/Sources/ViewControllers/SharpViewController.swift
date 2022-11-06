@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SharpViewController: UIViewController {
+final class SharpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

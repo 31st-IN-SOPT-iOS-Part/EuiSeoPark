@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
-class PhotoGridViewController: UIViewController {
+final class PhotoGridViewController: UIViewController {
     
     private let photoGridTopView = UIView()
     private var selectedImageList = [Int]()

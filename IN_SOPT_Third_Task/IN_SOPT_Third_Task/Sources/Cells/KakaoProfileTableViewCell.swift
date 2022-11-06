@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 import SwiftyColor
 
 final class KakaoProfileTableViewCell: UITableViewCell {

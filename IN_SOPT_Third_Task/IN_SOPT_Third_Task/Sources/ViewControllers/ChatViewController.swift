@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
-class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController {
     
     private let chatTopView = UIView()
 
